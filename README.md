@@ -1,174 +1,189 @@
-<div align="center">
-
-# 🤖 GitHub Copilot CLI para Termux
+::: {align="center"}
+# 🤖 适用于 Termux 的 GitHub Copilot CLI
 
 [![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=android&logoColor=white)](https://termux.com)
 [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![Stars](https://img.shields.io/github/stars/kastielslip/copilot-termux?style=for-the-badge)](https://github.com/kastielslip/copilot-termux)
 
-### *IA da Microsoft rodando 100% no seu Android*
+### *微软的 AI 100% 运行在你的 Android 上*
+:::
 
-</div>
+------------------------------------------------------------------------
 
----
+## 🚀 快速安装
 
-## 🚀 Instalação Rápida
+> **一条命令安装 - 全自动完成**
 
-> **Instalação com 1 comando - Totalmente automática**
-
-```bash
-curl -fsSL https://raw.githubusercontent.com/kastielslip/copilot-termux/master/install.sh | bash
+``` bash
+curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-chinese/master/install.sh | bash
 ```
 
+```{=html}
 <details>
-<summary><b>📦 Ou escolha uma versão específica</b></summary>
+```
+```{=html}
+<summary>
+```
+`<b>`{=html}📦 或选择指定版本`</b>`{=html}
+```{=html}
+</summary>
+```
+### 版本 0.0.353（最新）
 
-### Versão 0.0.353 (mais recente)
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/kastielslip/copilot-termux/master/install.sh) 0.0.353
+``` bash
+bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-chinese/master/install.sh) 0.0.353
 ```
 
-### Versão 0.0.346 (estável)
-```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/kastielslip/copilot-termux/master/install.sh) 0.0.346
+### 版本 0.0.346（稳定版）
+
+``` bash
+bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-chinese/master/install.sh) 0.0.346
 ```
 
+```{=html}
 </details>
+```
 
----
+------------------------------------------------------------------------
 
-## 📚 DOCUMENTAÇÃO
+## 📚 文档
 
-Tá, mas como isso funciona? Aqui tem tudo explicado de forma clara (sem manual chato de 500 páginas):
+好吧，那它是怎么工作的？这里有完整清晰的解释（没有 500 页那种枯燥说明书）：
 
-<div align="center">
+::: {align="center"}
+### [📖 工作原理](https://raw.githack.com/kastielslip/copilot-termux/master/docs/COMO_FUNCIONA.html)
 
-### [📖 COMO FUNCIONA](https://raw.githack.com/kastielslip/copilot-termux/master/docs/COMO_FUNCIONA.html)
+详细介绍 bypass 系统架构以及 Copilot 如何在 Termux 中运行。
 
-Arquitetura detalhada do sistema de bypass e como o Copilot funciona no Termux.
+**内容包括：** - 原生模块绕过系统 - node-pty 与 sharp 架构 - 安装流程 -
+文件结构 - 环境变量
 
-**Tópicos:**
-- Sistema de bypass de módulos nativos
-- Arquitetura do node-pty e sharp
-- Fluxo de instalação
-- Estrutura de arquivos
-- Variáveis de ambiente
+### [🔧 安装指南](https://raw.githack.com/kastielslip/copilot-termux/master/docs/INSTALACAO.html)
 
+完整的逐步安装指南。
 
-### [🔧 GUIA DE INSTALAÇÃO](https://raw.githack.com/kastielslip/copilot-termux/master/docs/INSTALACAO.html)
+**内容包括：** - 自动安装 - 手动安装 - 环境配置 - 安装验证 - 初始命令
 
-Guia completo passo a passo da instalação.
+### [🛠️ 故障排除](https://raw.githack.com/kastielslip/copilot-termux/master/docs/TROUBLESHOOTING.html)
 
-**Tópicos:**
-- Instalação automática
-- Instalação manual
-- Configuração do ambiente
-- Verificação da instalação
-- Primeiros comandos
+常见问题与错误解决方案。
 
+**内容包括：** - 原生模块错误 - NODE_OPTIONS 问题 - 认证错误 -
+性能与优化 - 日志与诊断
 
-### [🛠️ SOLUÇÃO DE PROBLEMAS](https://raw.githack.com/kastielslip/copilot-termux/master/docs/TROUBLESHOOTING.html)
+------------------------------------------------------------------------
+:::
 
+## ✨ 特性
 
-Solução de problemas comuns e erros.
-
-**Tópicos:**
-- Erros de módulos nativos
-- Problemas com NODE_OPTIONS
-- Erros de autenticação
-- Performance e otimização
-- Logs e diagnóstico
-
----
-
-</div>
-
-
-## ✨ Características
-
+```{=html}
 <table>
+```
+```{=html}
 <tr>
+```
+```{=html}
 <td>
+```
+### 🎯 完全自动化
 
-### 🎯 Automação Completa
-- ✅ Download automático
-- ✅ Instalação zero-config
-- ✅ Bypass de módulos nativos
-- ✅ Configuração automática
+-   ✅ 自动下载
+-   ✅ 零配置安装
+-   ✅ 原生模块绕过
+-   ✅ 自动环境配置
 
+```{=html}
 </td>
+```
+```{=html}
 <td>
+```
+### 🔧 技术特性
 
-### 🔧 Recursos Técnicos
-- ✅ Detecção de sistema
-- ✅ Multi-versão
-- ✅ Logs detalhados
-- ✅ Fallback inteligente
+-   ✅ 系统检测
+-   ✅ 多版本支持
+-   ✅ 详细日志
+-   ✅ 智能回退机制
 
+```{=html}
 </td>
+```
+```{=html}
 </tr>
+```
+```{=html}
 </table>
+```
 
----
+------------------------------------------------------------------------
 
-## 🎯 Como Usar
+## 🎯 使用方法
 
-### Após instalação:
+### 安装完成后：
 
-> ⚠️ **Reinicie o terminal antes de usar**
+> ⚠️ **使用前请重启终端**
 
-### Comandos:
+### 命令：
 
-**Ver versão:**
-```bash
+**查看版本：**
+
+``` bash
 copilot --version
 ```
 
-**Ver ajuda:**
-```bash
+**查看帮助：**
+
+``` bash
 copilot --help
 ```
 
-**Modo interativo:**
-```bash
+**交互模式：**
+
+``` bash
 copilot
 ```
 
-**Prompt direto:**
-```bash
-copilot -p "como listar arquivos no linux?"
+**直接执行提示：**
+
+``` bash
+copilot -p "如何在 linux 中列出文件？"
 ```
 
----
+------------------------------------------------------------------------
 
-## 🔄 Atualização
+## 🔄 更新
 
-```bash
+``` bash
 npm uninstall -g @github/copilot
 bash <(curl -fsSL https://raw.githubusercontent.com/kastielslip/copilot-termux/master/install.sh) 0.0.353
 ```
 
----
+------------------------------------------------------------------------
 
-## 📊 Compatibilidade
+## 📊 兼容性
 
-| Versão | Status | Testado |
-|--------|--------|---------|
-| 0.0.346 | ✅ Estável | Android 11+ ARM64 |
-| 0.0.353 | ✅ Funcional | Android 11+ ARM64 |
+  版本      状态      已测试
+  --------- --------- -------------------
+  0.0.346   ✅ 稳定   Android 11+ ARM64
+  0.0.353   ✅ 可用   Android 11+ ARM64
 
----
+------------------------------------------------------------------------
 
-## 📜 Licença
+## 📜 许可证
 
 MIT License - [LICENSE](LICENSE)
 
----
+------------------------------------------------------------------------
 
-<div align="center">
+## 翻译
 
-**Feito com ☕ por [kastielslip](https://github.com/kastielslip)**
+zzhlife Pixel ZZ
+
+------------------------------------------------------------------------
+
+
+::: {align="center"}
+**由 ☕ 驱动，作者 [kastielslip](https://github.com/kastielslip)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-kastielslip-181717?style=for-the-badge&logo=github)](https://github.com/kastielslip)
-
-</div>
+:::

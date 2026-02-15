@@ -1,96 +1,96 @@
 #!/data/data/com.termux/files/usr/bin/bash
 # ==========================================================
-# GitHub Copilot CLI - Instalador Corrigido para Termux
-# Versão: 1.1 - Com Sharp Stub para Android ARM64
-# Ambiente: Android ARM64 (Termux)
+# GitHub Copilot CLI - Termux 修正版安装器
+# 版本：1.1 - 含 Sharp Stub（适用于 Android ARM64）
+# 环境：Android ARM64（Termux）
 # ==========================================================
 
 set -euo pipefail
 
-# Configurações
+# 配置
 LOG_FILE="$HOME/copilot_install_$(date +%Y%m%d_%H%M%S).log"
 PREFIX="${PREFIX:-/data/data/com.termux/files/usr}"
 NODE_MODULES="$PREFIX/lib/node_modules"
 COPILOT_DIR="$NODE_MODULES/@github/copilot"
 
-# Redirecionar output para log e console
+# 将输出重定向到日志和控制台
 exec > >(tee -a "$LOG_FILE") 2>&1
 
 echo "=========================================="
-echo "🤖 GitHub Copilot CLI - Instalador Termux"
+echo "🤖 GitHub Copilot CLI - Termux 安装器"
 echo "=========================================="
-echo "Log: $LOG_FILE"
-echo "Ambiente: $(uname -o) $(uname -m)"
+echo "日志: $LOG_FILE"
+echo "环境: $(uname -o) $(uname -m)"
 echo "------------------------------------------"
 
-# Função de log
+# 日志函数
 log() {
   echo "[$(date '+%H:%M:%S')] $*"
 }
 
-# Verificar ambiente
+# 检查环境
 check_environment() {
-  log "Verificando ambiente..."
+  log "正在检查环境..."
   
   if ! command -v node &>/dev/null; then
-    log "❌ Node.js não encontrado"
-    echo "Execute: pkg install nodejs"
+    log "❌ 未找到 Node.js"
+    echo "请执行: pkg install nodejs"
     exit 1
   fi
   
   local node_ver
   node_ver=$(node -v | sed 's/^v//' | cut -d. -f1)
   if (( node_ver < 18 )); then
-    log "❌ Node.js versão 18+ requerida (atual: $(node -v))"
+    log "❌ 需要 Node.js 18+（当前版本: $(node -v)）"
     exit 1
   fi
   
-  log "✅ Node.js $(node -v) OK"
-  log "✅ npm $(npm -v) OK"
+  log "✅ Node.js $(node -v) 正常"
+  log "✅ npm $(npm -v) 正常"
 }
 
-# Instalar dependências
+# 安装依赖
 install_dependencies() {
-  log "Instalando dependências..."
+  log "正在安装依赖..."
   
-  pkg install -y libvips git wget >/dev/null 2>&1 || log "⚠️ Algumas dependências falharam"
-  log "✅ Dependências instaladas"
+  pkg install -y libvips git wget >/dev/null 2>&1 || log "⚠️ 部分依赖安装失败"
+  log "✅ 依赖安装完成"
 }
 
-# Limpar instalações anteriores
+# 清理旧安装
 clean_previous() {
-  log "Limpando instalações anteriores..."
+  log "正在清理旧版本..."
   npm uninstall -g @github/copilot 2>/dev/null || true
   npm cache clean --force 2>/dev/null || true
-  log "✅ Limpeza concluída"
+  log "✅ 清理完成"
 }
 
-# Instalar Copilot
+# 安装 Copilot
 install_copilot() {
-  log "Instalando @github/copilot@0.0.346..."
+  log "正在安装 @github/copilot@0.0.346..."
   
   if npm install -g @github/copilot@0.0.346 --ignore-scripts --force 2>&1 | tee -a "$LOG_FILE"; then
-    log "✅ Instalação concluída"
+    log "✅ 安装完成"
     return 0
   fi
   
-  log "❌ Falha na instalação"
+  log "❌ 安装失败"
   return 1
 }
 
-# Criar stub para Sharp (módulo de imagens)
+# 为 Sharp 创建 stub（图像模块）
 create_sharp_stub() {
-  log "Criando stub para módulo sharp..."
+  log "正在为 sharp 模块创建 stub..."
   
   local sharp_file="$COPILOT_DIR/node_modules/sharp/lib/sharp.js"
   
   if [[ ! -f "$sharp_file" ]]; then
-    log "⚠️ Sharp não encontrado, pulando"
+    log "⚠️ 未找到 Sharp，跳过"
     return 0
   fi
   
   cat > "$sharp_file" << 'EOFSHARP'
-// Sharp stub completo para Termux Android ARM64
+// Sharp 完整 stub（适用于 Termux Android ARM64）
 'use strict';
 
 const formats = {
@@ -136,7 +136,7 @@ const sharp = () => ({
   toColorspace: function() { return this; }
 });
 
-// sharp.format como função e propriedade
+// sharp.format 既是函数也是属性
 sharp.format = Object.assign(
   () => formats,
   formats
@@ -156,15 +156,15 @@ sharp.counters = () => ({ queue: 0, process: 0 });
 module.exports = sharp;
 EOFSHARP
 
-  log "✅ Sharp stub criado"
+  log "✅ Sharp stub 创建完成"
 }
 
-# Testar instalação
+# 测试安装
 test_installation() {
-  log "Testando instalação..."
+  log "正在测试安装..."
   
   if ! command -v copilot &>/dev/null; then
-    log "❌ Comando copilot não encontrado"
+    log "❌ 未找到 copilot 命令"
     return 1
   fi
   
@@ -172,15 +172,15 @@ test_installation() {
   version=$(copilot --version 2>&1 | head -1)
   
   if [[ -z "$version" ]]; then
-    log "❌ Erro ao executar copilot"
+    log "❌ 执行 copilot 时出错"
     return 1
   fi
   
-  log "✅ Copilot instalado: $version"
+  log "✅ Copilot 已安装: $version"
   return 0
 }
 
-# Executar instalação
+# 执行安装流程
 main() {
   check_environment
   install_dependencies
@@ -192,18 +192,18 @@ main() {
   echo "=========================================="
   
   if test_installation; then
-    echo "✅ Instalação concluída com sucesso!"
+    echo "✅ 安装成功完成！"
     echo "=========================================="
     echo ""
-    echo "Próximos passos:"
-    echo "  1. copilot --help    - Ver ajuda"
-    echo "  2. copilot           - Iniciar Copilot"
-    echo "  3. copilot -p '...'  - Prompt direto"
+    echo "后续操作："
+    echo "  1. copilot --help    - 查看帮助"
+    echo "  2. copilot           - 启动 Copilot"
+    echo "  3. copilot -p '...'  - 直接执行提示"
     echo ""
   else
-    echo "❌ Instalação com problemas"
+    echo "❌ 安装存在问题"
     echo "=========================================="
-    echo "Veja o log: $LOG_FILE"
+    echo "请查看日志: $LOG_FILE"
     exit 1
   fi
 }
