@@ -1,4 +1,3 @@
-::: {align="center"}
 # 🤖 适用于 Termux 的 GitHub Copilot CLI
 
 [![Termux](https://img.shields.io/badge/Termux-000000?style=for-the-badge&logo=android&logoColor=white)](https://termux.com)
@@ -18,16 +17,6 @@
 curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-chinese/master/install.sh | bash
 ```
 
-```{=html}
-<details>
-```
-```{=html}
-<summary>
-```
-`<b>`{=html}📦 或选择指定版本`</b>`{=html}
-```{=html}
-</summary>
-```
 ### 版本 0.0.353（最新）
 
 ``` bash
@@ -40,17 +29,12 @@ bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-ch
 bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-chinese/master/install.sh) 0.0.346
 ```
 
-```{=html}
-</details>
-```
-
 ------------------------------------------------------------------------
 
 ## 📚 文档
 
 好吧，那它是怎么工作的？这里有完整清晰的解释（没有 500 页那种枯燥说明书）：
 
-::: {align="center"}
 ### [📖 工作原理](https://raw.githack.com/kastielslip/copilot-termux/master/docs/COMO_FUNCIONA.html)
 
 详细介绍 bypass 系统架构以及 Copilot 如何在 Termux 中运行。
@@ -72,19 +56,8 @@ bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-ch
 性能与优化 - 日志与诊断
 
 ------------------------------------------------------------------------
-:::
 
 ## ✨ 特性
-
-```{=html}
-<table>
-```
-```{=html}
-<tr>
-```
-```{=html}
-<td>
-```
 ### 🎯 完全自动化
 
 -   ✅ 自动下载
@@ -92,12 +65,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-ch
 -   ✅ 原生模块绕过
 -   ✅ 自动环境配置
 
-```{=html}
-</td>
-```
-```{=html}
-<td>
-```
 ### 🔧 技术特性
 
 -   ✅ 系统检测
@@ -105,15 +72,6 @@ bash <(curl -fsSL https://raw.githubusercontent.com/2376780283/copilot-termux-ch
 -   ✅ 详细日志
 -   ✅ 智能回退机制
 
-```{=html}
-</td>
-```
-```{=html}
-</tr>
-```
-```{=html}
-</table>
-```
 
 ------------------------------------------------------------------------
 
@@ -181,9 +139,6 @@ zzhlife Pixel ZZ
 
 ------------------------------------------------------------------------
 
-
-::: {align="center"}
 **由 ☕ 驱动，作者 [kastielslip](https://github.com/kastielslip)**
 
 [![GitHub](https://img.shields.io/badge/GitHub-kastielslip-181717?style=for-the-badge&logo=github)](https://github.com/kastielslip)
-:::
