@@ -5,7 +5,6 @@
 [![Stars](https://img.shields.io/github/stars/kastielslip/copilot-termux?style=for-the-badge)](https://github.com/kastielslip/copilot-termux)
 
 ### *微软的 AI 100% 运行在你的 Android 上*
-:::
 
 ------------------------------------------------------------------------
 
